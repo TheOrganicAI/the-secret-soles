@@ -22,7 +22,7 @@ body {
     left: 0;
     width: 100%;
     height: auto; /* Change to auto */
-    object-fit: contain; /* Change to contain */
+    object-fit: fill; /* Change to fill */
     z-index: 1; /* Ensure the header image is below the logo */
 }
 
@@ -33,7 +33,7 @@ body {
     transform: translateX(-50%); /* Only translate horizontally */
     width: 90%; /* Set the width to 90% */
     height: auto; /* Change to auto */
-    object-fit: contain; /* Change to contain */
+    object-fit: fill; /* Change to fill */
     z-index: 2; /* Ensure the logo is above the header image */
 }
 
