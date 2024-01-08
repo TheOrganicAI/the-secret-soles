@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
+html, body {
+    min-height: 300vh;
+}
 
 body {
     font-family: Inter, sans-serif;
@@ -11,7 +14,7 @@ body {
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: auto; /* Change to auto */
+    height: auto;
 }
 
 .header-bg {
@@ -19,26 +22,24 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: auto; /* Change to auto */
-    object-fit: fill; /* Change to fill */
-    z-index: 1; /* Ensure the header image is below the logo */
+    height: auto;
+    object-fit: cover;
+    z-index: 1;
 }
 
 .header-logo {
     position: absolute;
-    top: 0; /* Change to 0 */
-    left: 50%; /* Center the logo horizontally */
-    transform: translateX(-50%); /* Only translate horizontally */
-    width: 90%; /* Set the width to 90% */
-    height: auto; /* Change to auto */
-    object-fit: fill; /* Change to fill */
-    z-index: 2; /* Ensure the logo is above the header image */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    z-index: 2;
 }
 
-/* Media query for smaller screens */
 @media (max-width: 600px) {
     .header-logo {
-        width: 100%; /* Set the width to 100% on smaller screens */
+        width: 100%;
     }
 }
 
@@ -105,3 +106,4 @@ body {
 .dark .jumbo::after {
     background-image: var(--stripesDark), var(--rainbow);
 }
+
