@@ -4,7 +4,6 @@ import (
 	"html/template"
 	"io"
 	"net/http"
-	"path/filepath"
 
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
@@ -30,14 +29,14 @@ func main() {
 	e.Use(middleware.Recover())
 
 	// Initialize the template registry with parsed templates located in the /templates folder
-	templatesPath := filepath.Join("..", "..", "templates", "*.html") // Adjust the path according to your main.go file's location
+	templatesPath := "./templates/*.html" // Adjust the path according to your main.go file's location
 	templateRegistry := &TemplateRegistry{
 		templates: template.Must(template.ParseGlob(templatesPath)),
 	}
 	e.Renderer = templateRegistry
 
 	// Static file serving
-	e.Static("/assets", "../../assets")
+	e.Static("/assets", "./assets")
 
 	// Routes
 	e.GET("/", homeHandler)
@@ -45,7 +44,7 @@ func main() {
 	e.GET("/gallery", galleryHandler)
 
 	// Start the server on port 8080
-	e.Logger.Fatal(e.Start(":8080"))
+	e.Logger.Fatal(e.Start(":8081"))
 }
 
 // Home page handler
